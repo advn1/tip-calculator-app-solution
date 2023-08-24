@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  
+  <title>Tip calculator app</title>
+
+</head>
+<body>
+  <div id="tip-calculator-app-container">
+    <img class="logo" src="./images/logo.svg" alt="Logo 'SPLITTER'">
+
+    <div class="main-container">
+      <div class="left-side">
+        <h4>Bill</h4>
+        <h4 hidden="false" class="error-bill"></h4>
+
+        <div class="bill-amount input-div bill-div">
+          <div class="img-div">
+              <img src="./images/icon-dollar.svg" alt="Dollar icon" class="icon">
+          </div>
+          <div class="sub-input-container"> <!-- Новый контейнер для .sub-input-div -->
+              <div class="sub-input-div">
+                  <input class="number-input bill" type="text" placeholder="0">
+              </div>
+          </div>
+      </div>
+
+        <h4>Select Tip %</h4>
+  
+        <div class="tip-selection">
+          <button onclick="savePercent('5')" class="tip-5 tip tip-btn">5%</button>
+          <button onclick="savePercent('10')" class="tip-10 tip tip-btn">10%</button>
+          <button onclick="savePercent('15')" class="tip-15 tip tip-btn">15%</button>
+          <button onclick="savePercent('25')" class="tip-25 tip tip-btn">25%</button>
+          <button onclick="savePercent('50')" class="tip-50 tip tip-btn">50%</button>
+          <div class="tip">
+            <input type="text" class="tip-custom" placeholder="Custom">
+          </div>
+        </div>
+  
+      <h4>Number of People</h4>
+  
+      <div class="number-of-people input-div num-div">
+        <div class="img-div">
+          <img src="./images/icon-person.svg" alt="Person icon" class="icon">
+        </div>
+        <div class="sub-input-div ppl-div">
+          <input class="number-input ppl" type="text" placeholder="0">
+        </div>
+      </div>
+    </div>
+  
+
+      <div class="right-side">
+        <div class="final-container">
+          <div class="tip-one">
+            <div class="title">
+              <p class="title-sub">Tip Amount</p>
+              <p class="person">/ person</p>
+            </div>
+            <div class="price-div">
+              <p class="price tipOne">$<span>0.00</span></p>
+            </div>
+          </div>
+          
+          <div class="total">
+            <div class="title">
+              <p class="title-sub">Total</p>
+              <p class="person">/ person</p>
+            </div>
+            <div class="price-div">
+              <p class="price totalOne">$<span>0.00</span></p>
+            </div>
+          </div>
+  
+          <div class="button-div">
+            <button onclick=setDefaultState() class="btn-reset">RESET</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <p class="tipBuggy" hidden="true"></p>
+  <script src="./index.js"></script>
+</body>
+</html>
